@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %> 
+
+
+<!-- d-flex justify-content-center align-items-center -->
+<div class="container  align-items-center justify-content-center mt-5">
+<div class="row">
+    <div class="col-md-6 offset-md-3 col=xl-4 offset-xl-4">
+        <div class="card shadow">
+            <!-- <img src="https://static.wixstatic.com/media/90e2b0_c3c778fffd5742cba65417ab4febdb1e~mv2.jpg/v1/fill/w_807,h_454,al_c,q_85/90e2b0_c3c778fffd5742cba65417ab4febdb1e~mv2.webp" 
+            alt="" class="card-img-top"> -->
+            <div class="card-body">
+                <h5 class="card-title">Login</h5>
+
+                <form action="/login" method="POST" class="validated-form" novalidate>
+    
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Username</label>
+                        <input class="form-control"type="username" id="username" name="username" autofocus required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control"type="password" id="password" name="password" required>
+                    </div>
+                    <div class="mb">
+                        <button class="btn btn-success">Log In</button>
+                
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

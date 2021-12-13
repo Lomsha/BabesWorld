@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+<h1 class="text-centre">New Product</h1>
+<div class="col-6 offset-md-3">
+    <div class="card shadow">
+        <div class="card-body">
+
+    <form action="/products" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label" for="title">Product Name</label>
+            <input class="form-control form-control-sm "type="text" id="title" name="product[title]" required>
+        </div>
+       
+
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Image</label>
+                <input class="form-control form-control-sm" id="formFileSm" type="file" name="image" multiple>
+              </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label"for="price">Price</label>
+
+        <div class="input-group">
+         <span class="input-group-text" id="basic-addon1">Ksh.</span>
+            <input type="text" class="form-control form-control-sm" placeholder="Price" aria-label="Price" aria-describedby="price-label" name="product[price]" required>
+
+        </div>
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label"for="description">Description</label>
+            <textarea class="form-control form-control-sm"type="text" id="description" name="product[description]" required></textarea>
+        </div>
+
+        <div class="mb">
+            <button class="btn btn-success">Add a product</button>
+
+        </div>
+    </form>
+    <a href="/products">All Products</a>
+
+</div>
+</div>
+</div>
+</div>
+    

@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %> 
+
+
+
+
+  <div class="row">
+      <h1 class="text-centre">Edit Details</h1>
+
+        <div class="col-6 offset-md-3">
+  <form action="/products/<%=products._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype = "multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Product Name</label>
+         <input class="form-control form-control-sm"type="text" id="title" name="product[title]"  value="<%=products.title %>" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label  class="form-label"for="image">Add image</label>
+                <input type="file" name = "image" id="image" class="form-control form-control-sm"    multiple>
+                <div class="mb-3">
+
+                    
+        
+                </div>
+                    <label  class="form-label"for="price">Price</label>
+        
+                <div class="input-group">
+                 <span class="input-group-text" id="basic-addon1">Ksh.</span>
+                    <input type="text" class="form-control form-control-sm" placeholder="Price" aria-label="Price" aria-describedby="price-label" name="product[price]"  value="<%= products.price%>" required>
+        
+                </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label  class="form-label"for="description">Description</label>
+                    <textarea class="form-control form-control-sm"type="text" id="description" name="product[description]" value="<%= products.description%>"  required></textarea>
+                </div>
+        <div class="mb-3">
+            <% products.images.forEach(function(img, i ){ %> 
+                <img src="  <%= img.url  %>  " class= "img-thumbnail"alt="">
+                <div class="form-check-inline">
+                    <input type="checkbox" id= "image-<%= i  %>" name = "deleteImages[]" value="<%= img.filename %> ">
+                </div>
+                <label for="image-<%= i  %>">Delete</label>
+                <% }) %> 
+        </div>
+                <div class="mb">
+                    <button class="btn btn-info">Save</button>
+        
+                </div>
+            </form>
+            <a href="/products"> Shoes</a>
+        
+        </div>
+        </div>
+
+
+        
+    
